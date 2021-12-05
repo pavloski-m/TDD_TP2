@@ -26,18 +26,18 @@ void LedsOn(int led) {
 
 void LedsOff(int led) {
     if ((led >= 1) && (led <= 16)) {
-    *puerto &= ~MASK_LED(led);
+        *puerto &= ~MASK_LED(led);
     }
     else {
         RegistrarError(0, __FUNCTION__, __LINE__, "Numero de led invalido");
     }
 }
 
-void LedsAllOn(void){
+void LedsAllOn(void) {
     *puerto = LEDS_ALLON;
 }
 
-void LedsAllOff(void){
+void LedsAllOff(void) {
     *puerto = LEDS_INIT_STATE;
 }
 
@@ -45,7 +45,7 @@ bool LedState(int led) {
     uint16_t value = FALSE;
 
     if ((led >= 1) && (led <= 16)) {
-        if(*puerto & MASK_LED(led)){
+        if (*puerto & MASK_LED(led)) {
             value = TRUE;
         }
     }

@@ -17,7 +17,7 @@
 
 #define  LED            3
 #define  LED_INFERIOR   1
-#define  LED_SUPERIOR   16  
+#define  LED_SUPERIOR   16
 #define  LED_OFFSET     1
 #define  LED_ON_STATE   1
 #define  LED_OFF_STATE  0
@@ -75,7 +75,7 @@ void test_prender_y_apagar_varios_leds(void) {
 // Preender todos los leds juntos
 void test_prender_todos_los_leds(void) {
     setUp();
-    LedsAllOn();    
+    LedsAllOn();
 
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, puertoVirtual);
 }
@@ -83,7 +83,7 @@ void test_prender_todos_los_leds(void) {
 //Apagar todos los leds juntos
 void test_apagar_todos_los_leds(void) {
     setUp();
-    LedsAllOn();    
+    LedsAllOn();
     LedsAllOff();
 
     TEST_ASSERT_EQUAL_HEX16(0x0000, puertoVirtual);
@@ -115,7 +115,6 @@ void test_valor_superior(void) {
     TEST_ASSERT_EQUAL(LED_ON_STATE, state);
 }
 
-
 //Revisar estado de extremo inferior
 void test_valor_inferior(void) {
     setUp();
@@ -123,7 +122,6 @@ void test_valor_inferior(void) {
     bool state = 0;
     state = LedState(LED_INFERIOR);
     TEST_ASSERT_EQUAL(LED_ON_STATE, state);
-
 }
 
 //Probar valores inválidos para los parámetros
